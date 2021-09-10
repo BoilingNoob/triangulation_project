@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Measurment:
-    lattitude: float
-    longitude: float
-    alltitude: float
+    x: float
+    y: float
+    z: float
     radius: float
