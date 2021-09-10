@@ -1,11 +1,5 @@
-from dataclasses import dataclass
-
-@dataclass
-class Measurment:
-    lattitude: float
-    longitude: float
-    alltitude: float
-    radius: float
-
+from planar_triangulation_lib import classes
 
 measurment1 = Measurment(100,100,100,0.9)
+
+print(measurment1)
