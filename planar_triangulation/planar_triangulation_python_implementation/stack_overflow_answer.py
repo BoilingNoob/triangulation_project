@@ -1,12 +1,12 @@
 from planar_triangulation_lib import classes as planar_classes
 from planar_triangulation_lib import functions as planar_funcs
 
+
 import numpy
 from numpy import sqrt, dot, cross
 from numpy.linalg import norm
 
 # solution from: https://stackoverflow.com/questions/1406375/finding-intersection-points-between-3-spheres
-
 
 def trilaterate_mine(measurement1, measurement2, measurement3):
     numpy_point_1 = numpy.array([measurement1.x, measurement1.y, measurement1.z])
@@ -70,6 +70,11 @@ measurement1 = planar_classes.Measurment(50, 0, 0, 50)
 measurement2 = planar_classes.Measurment(0, 50, 0, 50)
 measurement3 = planar_classes.Measurment(-50, 0, 0, 50)
 
-answer = trilaterate_mine(measurement1, measurement2, measurement3)
+data = planar_funcs.generate_data(None,1000)
+answer = trilaterate_mine(data.measurement1, data.measurement2, data.measurement3)
 
-print(answer)
+print("Measure 1: ",data.measurement1)
+print("Measure 2: ",data.measurement2)
+print("Measure 3: ",data.measurement3)
+print("the calculated answer: ", answer)
+print("   The original point: ", data.location)
